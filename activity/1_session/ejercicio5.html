@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+
+<body>
+
+    <script> 
+        // Alcance global con <script>
+        function unaFuncion() {
+            console.log("Mi alcance es global");
+        };
+    </script>
+    
+    <script>
+        // unaFuncion esta definida en el bloque anterior, dentro del alcance de este bloque 
+        unaFuncion();
+    </script>
+    
+    <script type="module">
+        // Alcance restringido al bloque de código con <script type = "module" >
+        function unaFuncion() {
+            console.log("Mi alcance es local");
+        };
+    </script>
+    
+    <script type="module">
+        unaFuncion(); // funcion no definida, fuera de alcance
+    </script> 
+    
+    <script >
+        // Error - en Console dice Uncaught SyntaxError: Cannot use import statement outside a module 
+        import "./aboutme.js";
+    </script>
+    
+    <script type="module">
+        // OK
+        import "./aboutme.js";
+    </script>
+
+</body>

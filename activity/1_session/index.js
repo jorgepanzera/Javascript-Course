@@ -17,6 +17,8 @@ for (let i=1; i<=100; i++) {
 }
 
 // Ejercicio 5
+console.log("Ejercicio 5 - Ver pdf adjunto");
+
 
 // Ejercicio 6
 
