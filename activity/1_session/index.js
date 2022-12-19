@@ -23,7 +23,7 @@ console.log("Ejercicio 5 - Ver pdf adjunto");
 // Ejercicio 6
 console.log("Ejercicio 6 - Objeto con métodos");
 
-// constructor function
+// Crear objeto usando constructor function
 function Formatter () {
     this.prefix = "Hello",
     this.append = function(cadenaAppend) {
@@ -45,5 +45,6 @@ Formatter.prototype.toLowerString = function(cadenaLower) {
 
 let formatter2 = new Formatter();
 
+formatter2.append("para todos los colegas - nueva instancia");
 formatter2.toLowerString("CONVERTIR todo A MINUSculas");
 
