@@ -31,7 +31,7 @@ function Formatter () {
     }
 }
 
-// create object
+// Crear instancia, aun sin el metodo toLowerString
 let  formatter = new Formatter();
 
 // metodo append
@@ -43,6 +43,7 @@ Formatter.prototype.toLowerString = function(cadenaLower) {
     console.log(cadenaLower.toLowerCase());
     }
 
+// Crear otra instancia, con el metodo toLowerString ya agregado
 let formatter2 = new Formatter();
 
 formatter2.append("para todos los colegas - nueva instancia");
