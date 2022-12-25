@@ -1,6 +1,28 @@
 // Ejercicio 1
 
+let person = {
+  name: 'Lucas',
+  age: 27,
+  profession: 'Developer',
+}
+
+let vehicle = {
+  tires: 4,
+  color: 'blue',
+  power: 1600,
+}
+
+function enumerateProperties(x) {
+  let properties = Object.keys(x);
+  console.log(properties);
+}
+
+console.log(enumerateProperties(person));
+console.log(enumerateProperties(vehicle));
+
+
 // Ejercicio 2
+conslog.log("Ver pdf adjunto")
 
 // Ejercicio 3
 
