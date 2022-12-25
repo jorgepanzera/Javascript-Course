@@ -13,8 +13,8 @@ let vehicle = {
 }
 
 function enumerateProperties(x) {
-  let properties = Object.keys(x);
-  console.log(properties);
+  let properties = Object.keys(x); // Obtener array de propierdades
+  return properties;
 }
 
 console.log(enumerateProperties(person));
@@ -22,9 +22,46 @@ console.log(enumerateProperties(vehicle));
 
 
 // Ejercicio 2
-conslog.log("Ver pdf adjunto")
+console.log("Ver pdf adjunto")
 
 // Ejercicio 3
+
+// declaracion de la clase InvertirCadena
+class InvertirCadena {
+  
+  cadenaInvertir = "Vamos a dar vuelta este String";
+
+  // metodo para hacer reverso de un string
+  reverseString = () => { 
+    let newString = "";
+
+    if (this.cadenaInvertir=="") {
+      throw new SyntaxError("Error, string vacio");
+    }
+
+    for (let i = this.cadenaInvertir.length - 1; i >= 0; i--) { 
+      newString += this.cadenaInvertir[i]; // lo mismo que newString = newString + this.cadenaInvertir[i];
+    }    
+
+    return(newString);
+
+  };
+
+}
+
+let invertirCadena = new InvertirCadena();
+
+try {
+  console.log(invertirCadena.reverseString());
+}
+catch (err) {
+  console.log("Error catcheado:" + err.message);
+}
+
+
+
+
+
 
 // podemos simplemente capturar la cadena vacia denunciada con throw con un try/cath
 // tambien se podria generar un CustomError extendiendo la clase Error, para ser mas especificos
