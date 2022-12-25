@@ -26,6 +26,11 @@ conslog.log("Ver pdf adjunto")
 
 // Ejercicio 3
 
+// podemos simplemente capturar la cadena vacia denunciada con throw con un try/cath
+// tambien se podria generar un CustomError extendiendo la clase Error, para ser mas especificos
+// invertirCadena.nuevoMetodo, lo podriamos llamar con invertirCadena?.nuevoMetodo para que no falle
+
+
 // Ejercicio 4
 
 // Ejercicio 5
