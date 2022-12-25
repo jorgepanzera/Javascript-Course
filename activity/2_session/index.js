@@ -29,7 +29,7 @@ console.log("Ver pdf adjunto")
 // declaracion de la clase InvertirCadena
 class InvertirCadena {
   
-  cadenaInvertir = "Vamos a dar vuelta este String";
+  cadenaInvertir = "Vamos a dar vuelta este";
 
   // metodo para hacer reverso de un string
   reverseString = () => { 
@@ -53,6 +53,9 @@ let invertirCadena = new InvertirCadena();
 
 try {
   console.log(invertirCadena.reverseString());
+
+  invertirCadena.nuevoMetodo?.();
+
 }
 catch (err) {
   console.log("Error catcheado:" + err.message);
