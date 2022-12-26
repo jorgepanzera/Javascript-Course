@@ -29,7 +29,7 @@ console.log("Ver pdf adjunto")
 // declaracion de la clase InvertirCadena
 class InvertirCadena {
   
-  cadenaInvertir = "Vamos a dar vuelta este";
+  cadenaInvertir = "Vamos a dar vuelta este String";
 
   // metodo para hacer reverso de un string
   reverseString = () => { 
@@ -94,14 +94,14 @@ logbad.login(); // alert -> User or passwd incorrect
         
 let bLogSuccess = document.getElementById("loginSuccess");
 
-bLogSuccess.addEventListener('click', (event) => {
+bLogSuccess.addEventListener('click', () => {
   let login = new Login("admin", "passwd");
   login.login();
   });
 
 // Agregar listener para loginFailure
 // Otra forma de hacerlo, concatenando el addEventListener al resultado del getElementById
-document.getElementById("loginFailure").addEventListener('click', (event) => {
+document.getElementById("loginFailure").addEventListener('click', () => {
                                           let login = new Login("pepe", "bad") ;
                                           login.login();
                                         });
@@ -112,10 +112,37 @@ let loginWitUsername = (username, password) => {
     return new Promise(function (resolve, rejected) {
       setTimeout(() => {
         if (username === "admin" && password === "passwd") {
-          resolve("User logged in");
+          resolve("Promise - User logged in");
         } else {
-          rejected("Error: invalid username or password");
+          rejected("Promise - Error: invalid username or password");
         }
       }, 200);
     });
 };
+
+
+// Agregar listener a loginSuccessAsync
+document.getElementById("loginSuccessAsync").addEventListener('click', async () => {
+  try {
+    let response = await loginWitUsername("admin", "passwd");
+    console.log(response);
+     }
+  catch(err) {
+      console.log("Error en loginSuccessAsync");
+      console.log(err);
+    }     
+  });
+
+
+// Agregar listener a loginFailureAsync
+document.getElementById("loginFailureAsync").addEventListener('click', async () => {
+  try {
+    let response = await loginWitUsername("pepe", "bad");
+    console.log(response);
+     }
+  catch(err) {
+        console.log("Error en loginFailureAsync");
+        console.log(err);
+    }      
+  });
+
