@@ -63,15 +63,28 @@ catch (err) {
 
 
 
-
-
-
-// podemos simplemente capturar la cadena vacia denunciada con throw con un try/cath
-// tambien se podria generar un CustomError extendiendo la clase Error, para ser mas especificos
-// invertirCadena.nuevoMetodo, lo podriamos llamar con invertirCadena?.nuevoMetodo para que no falle
-
-
 // Ejercicio 4
+
+class Login {
+  constructor(username, password) {
+      this.username = username;
+      this.password = password;
+  }
+
+  login() {
+    if (this.username=="admin" && this.password=="passwd") {
+      alert("Ejercicio 4 - User logged in.");
+    } else {
+      alert("Ejercicio 4 - User or Password incorrect.");
+    };
+      
+  }
+}
+
+let login = new Login("admin", "passwd") 
+login.login(); // alert -> User logged in
+let logbad = new Login("pepe", "bad") 
+logbad.login(); // alert -> User or passwd incorrect
 
 // Ejercicio 5
 
