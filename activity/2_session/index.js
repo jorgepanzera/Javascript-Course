@@ -81,12 +81,30 @@ class Login {
   }
 }
 
+
 let login = new Login("admin", "passwd") 
 login.login(); // alert -> User logged in
 let logbad = new Login("pepe", "bad") 
 logbad.login(); // alert -> User or passwd incorrect
 
+
 // Ejercicio 5
+
+// Agregar listener para loginSuccess
+        
+let bLogSuccess = document.getElementById("loginSuccess");
+
+bLogSuccess.addEventListener('click', (event) => {
+  let login = new Login("admin", "passwd");
+  login.login();
+  });
+
+// Agregar listener para loginFailure
+// Otra forma de hacerlo, concatenando el addEventListener al resultado del getElementById
+document.getElementById("loginFailure").addEventListener('click', (event) => {
+                                          let login = new Login("pepe", "bad") ;
+                                          login.login();
+                                        });
 
 // Ejercicio 6
 
