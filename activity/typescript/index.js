@@ -7,9 +7,9 @@ var PersonToArrayv1 = function (person) {
     return aResult;
     //return Object.values(person);
 };
-// version optimizada utilizando metodo Object.values
+// version optimizada utilizando metodo Object.keys
 var PersonToArray = function (person) {
-    // return Object.values(person); .values no andaba con el compilador
+    // return Object.values(person); .values no andaba con el compilador (tema de version()
     return Object.keys(person).map(function (key) { return person[key]; });
 };
 var aPerson = { name: "Jorge", age: 50, profession: "Ingeniero" };
@@ -19,3 +19,4 @@ console.log(PersonToArray(aPerson));
 // Ejercicio 2
 // Ejercicio 3
 // Ejercicio 4
+//# sourceMappingURL=index.js.map
