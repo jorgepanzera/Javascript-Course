@@ -46,12 +46,12 @@ function sumOrConcatenate(x: NumberOrString, y: NumberOrString) : NumberOrString
     if (typeof x === "number" && typeof y === "string"){
         return String(x) + "+" + y
     }
-    throw new Error(`Expected string or number in both parameters, x is '${typeof x}', y is ${typeof y}`);
 }
 
 console.log(sumOrConcatenate(4, 3)); // 7
 console.log(sumOrConcatenate(4, "hello")); // 4+hello 
 console.log(sumOrConcatenate("hello", "world")); //hello-world
+console.log(sumOrConcatenate("Jorge",5)); 
 
 
 // Ejercicio 3

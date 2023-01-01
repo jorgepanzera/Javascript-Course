@@ -29,10 +29,10 @@ function sumOrConcatenate(x, y) {
     if (typeof x === "number" && typeof y === "string") {
         return String(x) + "+" + y;
     }
-    throw new Error("Expected string or number in both parameters, x is '".concat(typeof x, "', y is ").concat(typeof y));
 }
 console.log(sumOrConcatenate(4, 3)); // 7
 console.log(sumOrConcatenate(4, "hello")); // 4+hello 
 console.log(sumOrConcatenate("hello", "world")); //hello-world
+console.log(sumOrConcatenate("Jorge", 5));
 // Ejercicio 3
 // Ejercicio 4
