@@ -34,5 +34,41 @@ console.log(sumOrConcatenate(4, 3)); // 7
 console.log(sumOrConcatenate(4, "hello")); // 4+hello 
 console.log(sumOrConcatenate("hello", "world")); //hello-world
 console.log(sumOrConcatenate("Jorge", 5));
-// Ejercicio 3
+// Funcion para comprobar si el parametro es parametro es Car o Motorcycle
+// usando Type predicates
+function isCar(vehicle) {
+    return vehicle.pressPedal !== undefined;
+}
+// Funcion con parametro Car or Motorcycle, 
+// que usa las funciones segun el tipo de Vehicle que le llega
+function useVehicle(oneVehicle) {
+    oneVehicle.turnOnEngine();
+    if (isCar(oneVehicle)) {
+        oneVehicle.pressPedal();
+    }
+    else {
+        oneVehicle.openThrottle();
+    }
+}
+var oneCar = {
+    tires: 4,
+    turnOnEngine: function () {
+        console.log("Car is turning On !");
+    },
+    pressPedal: function () {
+        console.log("Pressing Car pedal !");
+    }
+};
+var oneMotorcycle = {
+    tires: 2,
+    turnOnEngine: function () {
+        console.log("Motorcycle is turning On !");
+    },
+    openThrottle: function () {
+        console.log("Motorcycle Full Throttle !");
+    }
+};
+// Probar funcion useVehicle
+useVehicle(oneCar);
+useVehicle(oneMotorcycle);
 // Ejercicio 4
