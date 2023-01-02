@@ -56,4 +56,58 @@ console.log(sumOrConcatenate("Jorge",5));
 
 // Ejercicio 3
 
+interface Vehicle {
+    tires: number;
+    turnOnEngine() : void
+}
+
+interface Car extends Vehicle {
+    pressPedal(): void
+}
+
+interface Motorcycle extends Vehicle {
+    openThrottle(): void
+}
+
+// Funcion para comprobar si el parametro es parametro es Car o Motorcycle
+// usando Type predicates
+function isCar(vehicle: Car | Motorcycle): vehicle is Car {
+    return (vehicle as Car).pressPedal !== undefined;
+}
+
+// Funcion con parametro Car or Motorcycle, 
+// que usa las funciones segun el tipo de Vehicle que le llega
+function useVehicle(oneVehicle: Car | Motorcycle) : void {
+    oneVehicle.turnOnEngine()
+    if (isCar(oneVehicle)){
+        oneVehicle.pressPedal()
+    } else {
+        oneVehicle.openThrottle()
+    }
+}
+
+let oneCar : Car = {
+    tires:4,
+    turnOnEngine():void {
+        console.log("Car is turning On !")
+    },
+    pressPedal():void{
+        console.log("Pressing Car pedal !")
+    }
+}
+
+let oneMotorcycle: Motorcycle = {
+    tires:2,
+    turnOnEngine():void {
+        console.log("Motorcycle is turning On !")
+    },    
+    openThrottle():void{
+        console.log("Motorcycle Full Throttle !")
+    }
+}
+
+// Probar funcion useVehicle
+useVehicle(oneCar)
+useVehicle(oneMotorcycle)
+
 // Ejercicio 4
