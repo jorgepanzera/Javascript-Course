@@ -72,3 +72,26 @@ var oneMotorcycle = {
 useVehicle(oneCar);
 useVehicle(oneMotorcycle);
 // Ejercicio 4
+// Verificar si todos los componentes del array son number o string
+// dado que hay que usar un tipo generico T y no un Union Type, la forma de 
+// no tener en cuenta elementos de otro tipo es controlando los elementos del array
+var removeFirstEntry = function (arr) {
+    for (var i = 0; i < arr.length; i++) {
+        if (!(typeof arr[i] === "number" || typeof arr[i] === "string")) {
+            throw new Error("Array con elementos de tipo no soportados");
+        }
+    }
+    arr.shift(); // remover primer elemento
+    return arr;
+};
+var strArray = ['Hello', 'World', 'Im', 'a', 'Full', 'Stack', 'Developer'];
+var numArray = [1, 2, 3, 4, 5, 6, 7];
+var mixedArray = ['Hello', 'I', 'have', 3, 'tasks'];
+var unsupportedArray = [{ name: 'Lucas', surname: 'Fernandez' }, 'Hello', 22];
+var newStrArray = removeFirstEntry(strArray);
+var newNumArray = removeFirstEntry(numArray);
+var newMixedArray = removeFirstEntry(mixedArray);
+console.log(newStrArray); // --> ['World', 'Im', 'a', 'Full', 'Stack', 'Developer'];
+console.log(newNumArray); // --> [2, 3, 4, 5, 6, 7];
+console.log(newMixedArray); // --> ['I', 'have', 3, 'tasks'];
+var newUnsupportedArray = removeFirstEntry(unsupportedArray); //--> will fail

@@ -111,3 +111,32 @@ useVehicle(oneCar)
 useVehicle(oneMotorcycle)
 
 // Ejercicio 4
+
+// Verificar si todos los componentes del array son number o string
+// dado que hay que usar un tipo generico T y no un Union Type, la forma de 
+// no tener en cuenta elementos de otro tipo es controlando los elementos del array
+
+const removeFirstEntry = <T>(arr: Array<T>) : Array<T> => {
+    for (let i=0; i < arr.length; i++){
+        if ( !(typeof arr[i] === "number" || typeof arr[i] === "string") ){
+            throw new Error("Array con elementos de tipo no soportados")
+        }
+    }
+    arr.shift() // remover primer elemento
+    return arr
+}
+
+const strArray: string[] = ['Hello', 'World', 'Im', 'a', 'Full', 'Stack', 'Developer'];
+const numArray: number[] = [1, 2, 3, 4, 5, 6, 7];
+const mixedArray: Array<number|string> = ['Hello', 'I', 'have', 3, 'tasks'];
+const unsupportedArray = [{name: 'Lucas', surname: 'Fernandez'}, 'Hello', 22];
+
+const newStrArray = removeFirstEntry(strArray);
+const newNumArray = removeFirstEntry(numArray);
+const newMixedArray = removeFirstEntry(mixedArray);
+
+console.log(newStrArray); // --> ['World', 'Im', 'a', 'Full', 'Stack', 'Developer'];
+console.log(newNumArray); // --> [2, 3, 4, 5, 6, 7];
+console.log(newMixedArray); // --> ['I', 'have', 3, 'tasks'];
+
+const newUnsupportedArray = removeFirstEntry(unsupportedArray); //--> will fail
